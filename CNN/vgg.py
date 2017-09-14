@@ -13,9 +13,9 @@ def ConvBlock(n_in, n_fb, kernel_size = 3, stride = 1, padding = 1, downsample =
 		
 	return nn.Sequential(*layers)
 
-class vgg16(nn.Module):
+class VGG16(nn.Module):
 	def __init__(self, input_dim, n_out):
-		super(vgg16, self).__init__()
+		super(VGG16, self).__init__()
 		h, w = input_dim[0]/32, input_dim[1]/32
 		self.convnet = nn.Sequential(
 				ConvBlock(3, 64),
@@ -60,3 +60,6 @@ class vgg16(nn.Module):
 			elif isinstance(m, nn.BatchNorm2d):
 				m.weight.data.fill_(1)
 				m.bias.data.zero_()
+
+def vgg16(input_dim, n_out):
+	return VGG16(input_dim, n_out)
