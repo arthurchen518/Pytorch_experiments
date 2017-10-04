@@ -1,7 +1,7 @@
 # 1. Remove the last sigmoid in the discriminator
-# 2. Clip the weights of the discriminator
+# 2. Add gradient penalty for loss of discriminator
 # 3. Train the discriminator more than the generator
-# 4. Use RMSprop instead of any momentum-based optimizer such as Adam and use lower learning rate
+# 4. Use Adam 
 # 5. Use Wasserstein loss instead of JS divergence
 
 import os 
