@@ -36,11 +36,6 @@ class ResBlock(nn.Module):
 		y_out = self.conv2(y_out)
 
 		if self.downsample is not None:
-			if not self.preactivation:
-				self.downsample = nn.Sequential(
-						nn.BatchNorm2d(self.n_in), 
-						self.downsample
-					)
 			identity = self.downsample(identity)
 
 		y_out += identity
@@ -89,11 +84,6 @@ class ResBottleNeck(nn.Module):
 		y_out = self.conv3(y_out)
 
 		if self.downsample is not None:
-			if not self.preactivation:
-				self.downsample = nn.Sequential(
-						nn.BatchNorm2d(self.n_in), 
-						self.downsample
-					)
 			identity = self.downsample(identity)
 
 		y_out += identity
@@ -141,11 +131,6 @@ class ResNeXtBottleNeck(nn.Module):
 		y_out = self.conv3(y_out)
 
 		if self.downsample is not None:
-			if not self.preactivation:
-				self.downsample = nn.Sequential(
-						nn.BatchNorm2d(self.n_in), 
-						self.downsample
-					)
 			identity = self.downsample(identity)
 
 		y_out += identity
