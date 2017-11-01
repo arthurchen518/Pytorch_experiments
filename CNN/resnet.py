@@ -199,7 +199,7 @@ class ResNet(nn.Module):
 
 
 def ResNet18(input_dim, n_out):
-	model = ResNet(ResBlock, [1, 1, 1, 1], input_dim, n_out)
+	model = ResNet(ResBlock, [2, 2, 2, 2], input_dim, n_out)
 	return model
 
 def ResNet50(input_dim, n_out):
